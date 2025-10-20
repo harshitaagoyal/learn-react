@@ -7,6 +7,9 @@ function App() {
     <div className="w-full h-screen duration-200" style={{backgroundColor:color}}>
       <div className="fixed flex flex-wrap justify-center bottom-12 inset-x-0 px-2">
         <div className="flex flex flex-wrap justify-center gap-3 shadow-lg bg-white/30 backdrop-blur-md rounded-full px-4 py-3">
+        {/* in onClick, we are setting the color state to the respective color, onclick only takes function 
+        as input so if we pass setcolour("red") it will give the returned value of the function not the function 
+        but onclick needs a function so we rather passed a callback function so taht we pass a function */}
           <button onClick={()=>setColor("red")} className="outline-none px-4 py-1 rounded-full text-white shadow-lg" style={{backgroundColor:"red"}}>RED</button>
           <button onClick={()=>setColor("green")} className="outline-none px-4 py-1 rounded-full text-white shadow-lg" style={{backgroundColor:"green"}}>GREEN</button>
           <button onClick={()=>setColor("blue")} className="outline-none px-4 py-1 rounded-full text-white shadow-lg" style={{backgroundColor:"blue"}}>BLUE</button>
