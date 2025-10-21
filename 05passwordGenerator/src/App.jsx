@@ -7,6 +7,10 @@ function App() {
   const [charAllowed,setCharAllowed] = useState(false)
   const[password,setPassword] = useState('')
 
+//   useRef is a React hook that lets you persist a value across renders without causing re-renders when it changes.It’s often used for:
+
+// Accessing DOM elements directly (like document.getElementById),Storing mutable values that you want to survive across renders,Keeping timers, previous state values, or counter
+
   const passwordRef=useRef(null)
 
   const generatePassword = useCallback(()=>{
@@ -30,8 +34,12 @@ function App() {
     window.navigator.clipboard.writeText(password)
   },[password])
 
+// useEffect lets you perform side effects in a functional component.
+// Think of “side effects” as things that happen outside the normal rendering flow, like:
 
-  useEffect(()=>{
+// Fetching data from an API ,Updating the DOM manually,Subscribing or unsubscribing to events (like window.resize),Using timers (setTimeout, setInterval)
+
+  useEffect(()=>{                        
     generatePassword()
   },[generatePassword,length,numberAllowed,charAllowed])
 
